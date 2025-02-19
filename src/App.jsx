@@ -1,7 +1,7 @@
 import "./App.css";
 
 function App() {
-  return <h1>AviaSales</h1>;
+  return <h1>Avia Sales</h1>;
 }
 
 export default App;
