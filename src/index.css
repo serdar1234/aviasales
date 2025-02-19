@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f3f7fa;
+  color: #4a4a4a;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
