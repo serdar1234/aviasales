@@ -8,7 +8,7 @@ import Filters from "./components/Filters";
 function App() {
   return (
     <>
-      <Grid className="grid-container" container spacing={2} width="754px">
+      <Grid className="grid-container" container width="754px">
         <Header />
         <ControlPanel />
         <Filters />

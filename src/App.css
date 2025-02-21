@@ -1,3 +1,6 @@
 .grid-container {
   border: 3px dotted rgba(195, 0, 255, 0.1);
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
