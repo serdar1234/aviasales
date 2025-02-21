@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Filters from "../Filters";
-import classes from "./infoDisplay.module.scss";
+import classes from "./InfoDisplay.module.scss";
 
 const InfoDisplay = () => {
   return (
