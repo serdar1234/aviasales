@@ -5,14 +5,15 @@ import Button from "@mui/material/Button";
 const Filters = () => {
   return (
     <ButtonGroup
-      className={classes.heading}
+      className={classes.buttonGroup}
       disableElevation
-      variant="contained"
-      aria-label="Disabled button group"
+      fullWidth
+      variant="outlined"
+      aria-label="Фильтры для сортировки билетов"
     >
       <Button>Самый дешёвый</Button>
       <Button>Самый быстрый</Button>
-      <Button>Оптимальный</Button>
+      <Button style={{ flexGrow: 1 }}>Оптимальный</Button>
     </ButtonGroup>
   );
 };

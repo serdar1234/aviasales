@@ -1,9 +1,16 @@
-.heading {
+.buttonGroup {
   height: 50px;
   button {
-    font-family: "Open Sans", sans-serif;
-    // font-size: 14px;
-    // line-height: 14px;
-    // letter-spacing: 0px;
+    font-weight: 500;
+    color: #4a4a4a;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    &:last-child {
+      flex-grow: 1;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 82%;
+    }
   }
 }

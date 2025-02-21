@@ -6,9 +6,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 
-const Header = () => {
+const ControlPanel = () => {
   return (
-    <Grid size={4} component={"aside"}>
+    <Grid size={{ sm: 4 }} component={"aside"}>
       <Paper elevation={3} className={classes.paper}>
         <Typography className={classes.heading} component={"h3"}>
           Количество пересадок
@@ -45,4 +45,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default ControlPanel;
