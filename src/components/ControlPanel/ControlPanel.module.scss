@@ -1,0 +1,29 @@
+.paper {
+  width: 232px;
+  padding-block: 20px;
+  overflow: hidden;
+  .heading {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    margin: 0 20px 10px;
+  }
+  .checkOption {
+    width: 100%;
+    padding-inline: 20px;
+    &:hover {
+      background-color: #f1fcff;
+    }
+    .inputLabel {
+      font-size: 13px;
+      font-family: "Open Sans", sans-serif;
+      font-family: Open Sans;
+      line-height: 20px;
+      letter-spacing: 0px;
+      color: #4a4a4a;
+    }
+  }
+}
