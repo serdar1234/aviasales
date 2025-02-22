@@ -18,7 +18,7 @@ const aviaSalesTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['"Open Sans"'],
+    fontFamily: ['"Open Sans"', "sans-serif"].join(","),
   },
 });
 

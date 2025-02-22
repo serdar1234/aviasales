@@ -1,0 +1,15 @@
+.card {
+  // width: 502px;
+  height: 184px;
+}
+
+.card__heading {
+  display: flex;
+  justify-content: space-between;
+  .card__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0px;
+  }
+}

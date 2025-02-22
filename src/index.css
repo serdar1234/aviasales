@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import "../src/utils/fonts.scss";
 
 body {
   margin: 0;
@@ -18,9 +18,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
