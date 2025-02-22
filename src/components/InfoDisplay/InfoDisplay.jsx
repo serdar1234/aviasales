@@ -15,7 +15,12 @@ const InfoDisplay = () => {
       >
         <Filters />
         <Tickets />
-        <Button variant="contained" fullWidth sx={{ height: "50px" }}>
+        <Button
+          variant="contained"
+          disableElevation
+          fullWidth
+          sx={{ height: "50px" }}
+        >
           Показать еще 5 билетов!
         </Button>
       </Grid>

@@ -1,15 +1,27 @@
 .card {
-  // width: 502px;
   height: 184px;
+  padding: 20px;
+  text-align: start;
+  &__content {
+    padding: 0 !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__content:last-child {
+    padding-bottom: 0 !important;
+  }
 }
 
 .card__heading {
   display: flex;
   justify-content: space-between;
-  .card__title {
+  .card__title h5 {
     font-weight: 600;
     font-size: 24px;
     line-height: 24px;
     letter-spacing: 0px;
+    margin-block: 6px;
   }
 }

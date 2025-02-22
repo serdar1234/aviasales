@@ -1,6 +1,5 @@
 import classes from "./Tickets.module.scss";
 import Stack from "@mui/material/Stack";
-import Paper from "@mui/material/Paper";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid2";
 import CardContent from "@mui/material/CardContent";
@@ -8,12 +7,12 @@ import Typography from "@mui/material/Typography";
 
 const Tickets = () => {
   return (
-    <Stack sx={{ border: "1px dashed red", marginBlock: "16px" }} spacing={2}>
-      <Card component={"article"} className={classes.card}>
-        <CardContent>
+    <Stack sx={{ marginBlock: "16px" }} spacing={2}>
+      <Card component={"article"} elevation={3} className={classes.card}>
+        <CardContent className={classes.card__content}>
           <Grid container spacing={2} className={classes.card__heading}>
             <Grid className={classes.card__title}>
-              <Typography variant="h5" component="h5">
+              <Typography variant="h5" component="h5" color="primary">
                 13 400 P
               </Typography>
             </Grid>
@@ -21,36 +20,48 @@ const Tickets = () => {
               <img src="/s7_logo.png" alt="S7 Airlines" />
             </Grid>
           </Grid>
-          <Grid container spacing={2}>
+          <Grid container sx={{ justifyContent: "space-between" }}>
             <Grid>
-              <Typography
-                gutterBottom
-                sx={{ color: "text.secondary", fontSize: 14 }}
-              >
-                Word of the Day
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                MOW - HKT
               </Typography>
+              <Typography>10:45 – 08:00</Typography>
             </Grid>
-            <Grid></Grid>
-            <Grid></Grid>
+            <Grid>
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                В ПУТИ
+              </Typography>
+              <Typography>21:45 минут</Typography>
+            </Grid>
+            <Grid>
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                2 ПЕРЕСАДКИ
+              </Typography>
+              <Typography>HKG - JNB</Typography>
+            </Grid>
           </Grid>
-          <Grid container spacing={2}>
-            <Grid></Grid>
-            <Grid></Grid>
-            <Grid></Grid>
+          <Grid container sx={{ justifyContent: "space-between" }}>
+            <Grid>
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                MOW - HKT
+              </Typography>
+              <Typography>10:45 – 08:00</Typography>
+            </Grid>
+            <Grid>
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                В ПУТИ
+              </Typography>
+              <Typography>21:45 минут</Typography>
+            </Grid>
+            <Grid>
+              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                2 ПЕРЕСАДКИ
+              </Typography>
+              <Typography>HKG - JNB</Typography>
+            </Grid>
           </Grid>
-
-          <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
-            adjective
-          </Typography>
-          <Typography variant="body2">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
         </CardContent>
       </Card>
-      <Paper>some text inside a paper</Paper>
-      <Paper>some text inside a paper</Paper>
     </Stack>
   );
 };
