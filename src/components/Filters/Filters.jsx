@@ -11,7 +11,7 @@ const Filters = () => {
       variant="outlined"
       aria-label="Фильтры для сортировки билетов"
     >
-      <Button>Самый дешёвый</Button>
+      <Button variant="contained">Самый дешёвый</Button>
       <Button>Самый быстрый</Button>
       <Button style={{ flexGrow: 1 }}>Оптимальный</Button>
     </ButtonGroup>

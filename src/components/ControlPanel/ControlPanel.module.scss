@@ -17,8 +17,9 @@ aside {
   overflow: hidden;
 
   .heading {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
     letter-spacing: 0px;
     text-transform: uppercase;
     color: #4a4a4a;
@@ -35,7 +36,6 @@ aside {
 
     .inputLabel {
       font-size: 13px;
-      font-family: Open Sans;
       line-height: 20px;
       letter-spacing: 0px;
       color: #4a4a4a;

@@ -8,7 +8,7 @@ const InfoDisplay = () => {
   return (
     <>
       <Grid
-        size={{ sm: 8 }}
+        size={{ sm: 7.8 }}
         rowSpacing={2}
         component={"section"}
         className={classes.section}

@@ -20,7 +20,7 @@ const Tickets = () => {
               <img src="/s7_logo.png" alt="S7 Airlines" />
             </Grid>
           </Grid>
-          <Grid container sx={{ justifyContent: "space-between" }}>
+          <Grid container className={classes.card__info}>
             <Grid>
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
                 MOW - HKT
@@ -31,7 +31,7 @@ const Tickets = () => {
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
                 В ПУТИ
               </Typography>
-              <Typography>21:45 минут</Typography>
+              <Typography>21ч 45м</Typography>
             </Grid>
             <Grid>
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
@@ -40,7 +40,7 @@ const Tickets = () => {
               <Typography>HKG - JNB</Typography>
             </Grid>
           </Grid>
-          <Grid container sx={{ justifyContent: "space-between" }}>
+          <Grid container className={classes.card__info}>
             <Grid>
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
                 MOW - HKT
@@ -51,7 +51,7 @@ const Tickets = () => {
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
                 В ПУТИ
               </Typography>
-              <Typography>21:45 минут</Typography>
+              <Typography>21ч 45м</Typography>
             </Grid>
             <Grid>
               <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
