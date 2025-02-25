@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid2";
 import Button from "@mui/material/Button";
-import Filters from "../Filters";
+import SortFilters from "../SortFilters";
 import classes from "./InfoDisplay.module.scss";
 import Tickets from "../Tickets/Tickets";
 
@@ -13,7 +13,7 @@ const InfoDisplay = () => {
         component={"section"}
         className={classes.section}
       >
-        <Filters />
+        <SortFilters />
         <Tickets />
         <Button
           variant="contained"
