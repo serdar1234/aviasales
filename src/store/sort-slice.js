@@ -1,14 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateSort = { filter: "cheap" };
+const initialStateSort = { filter: "cheap", ticketsDisplayed: 5 };
 
 const sortSlice = createSlice({
   name: "sort",
   initialState: initialStateSort,
   reducers: {
-    cheap: () => ({ filter: "cheap" }),
-    fast: () => ({ filter: "fast" }),
-    optimal: () => ({ filter: "optimal" }),
+    cheap: (state) => ({
+      ...state,
+      filter: "cheap",
+    }),
+    fast: (state) => ({
+      ...state,
+      filter: "fast",
+    }),
+    optimal: (state) => ({
+      ...state,
+      filter: "optimal",
+    }),
+    showMore: (state) => ({
+      ...state,
+      ticketsDisplayed: state.ticketsDisplayed + 5,
+    }),
   },
 });
 

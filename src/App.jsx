@@ -25,7 +25,13 @@ function App() {
 
   return (
     <>
-      <Grid className="grid-container" container width="754px">
+      <Grid
+        className="grid-container"
+        container
+        width="754px"
+        rowSpacing={1}
+        columnSpacing={1}
+      >
         <Header />
         <ControlPanel />
         <InfoDisplay />

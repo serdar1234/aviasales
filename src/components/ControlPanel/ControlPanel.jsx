@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 const ControlPanel = () => {
   return (
-    <Grid size={{ sm: 4 }} component={"aside"}>
+    <Grid size={{ sm: 3.7 }} component={"aside"}>
       <Paper elevation={3} className={classes.paper}>
         <Typography className={classes.heading} component={"h3"}>
           Количество пересадок

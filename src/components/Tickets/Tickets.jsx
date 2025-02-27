@@ -4,120 +4,100 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid2";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-const u6logo =
-  "https://images.daisycon.io/airline/?width=110&height=36&iata=U6";
+import { useSelector } from "react-redux";
+import {
+  durationInHoursMinutes,
+  showDeparturesTimes,
+  transitsCount,
+} from "../../utils/timeUtils";
 
 const Tickets = () => {
+  const shownTicketCount = useSelector((state) => state.sort.ticketsDisplayed);
+  const ticketsArray = useSelector((state) => state.tickets.tickets);
+  const visibleTickets = ticketsArray.slice(0, shownTicketCount);
+
   return (
     <Stack sx={{ marginBlock: "16px" }} spacing={2}>
-      <Card component={"article"} elevation={3} className={classes.card}>
-        <CardContent className={classes.card__content}>
-          <Grid container spacing={2} className={classes.card__heading}>
-            <Grid className={classes.card__title}>
-              <Typography variant="h5" component="h5" color="primary">
-                13 400 P
-              </Typography>
-            </Grid>
-            <Grid>
-              <img src={u6logo} alt="S7 Airlines" />
-            </Grid>
-          </Grid>
-          <Grid container className={classes.card__info}>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                MOW - HKT
-              </Typography>
-              <Typography>10:45 – 08:00</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                В ПУТИ
-              </Typography>
-              <Typography>21ч 45м</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                2 ПЕРЕСАДКИ
-              </Typography>
-              <Typography>HKG - JNB</Typography>
-            </Grid>
-          </Grid>
-          <Grid container className={classes.card__info}>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                MOW - HKT
-              </Typography>
-              <Typography>10:45 – 08:00</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                В ПУТИ
-              </Typography>
-              <Typography>21ч 45м</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                2 ПЕРЕСАДКИ
-              </Typography>
-              <Typography>HKG - JNB</Typography>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
-      <Card component={"article"} elevation={3} className={classes.card}>
-        <CardContent className={classes.card__content}>
-          <Grid container spacing={2} className={classes.card__heading}>
-            <Grid className={classes.card__title}>
-              <Typography variant="h5" component="h5" color="primary">
-                13 400 P
-              </Typography>
-            </Grid>
-            <Grid>
-              <img src="/s7_logo.png" alt="S7 Airlines" />
-            </Grid>
-          </Grid>
-          <Grid container className={classes.card__info}>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                MOW - HKT
-              </Typography>
-              <Typography>10:45 – 08:00</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                В ПУТИ
-              </Typography>
-              <Typography>21ч 45м</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                2 ПЕРЕСАДКИ
-              </Typography>
-              <Typography>HKG - JNB</Typography>
-            </Grid>
-          </Grid>
-          <Grid container className={classes.card__info}>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                MOW - HKT
-              </Typography>
-              <Typography>10:45 – 08:00</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                В ПУТИ
-              </Typography>
-              <Typography>21ч 45м</Typography>
-            </Grid>
-            <Grid>
-              <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                2 ПЕРЕСАДКИ
-              </Typography>
-              <Typography>HKG - JNB</Typography>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
+      {visibleTickets.map(({ price, carrier, segments }) => {
+        return (
+          <Card
+            key={Date.parse(segments[0].date)}
+            component={"article"}
+            elevation={3}
+            className={classes.card}
+          >
+            <CardContent className={classes.card__content}>
+              <Grid container spacing={2} className={classes.card__heading}>
+                <Grid className={classes.card__title}>
+                  <Typography variant="h5" component="h5" color="primary">
+                    {price} P
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <img
+                    src={`https://pics.avs.io/110/36/${carrier}.png`}
+                    alt={`Логотип авиалинии ${carrier}`}
+                  />
+                </Grid>
+              </Grid>
+              <Grid container className={classes.card__info}>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    {segments[0].origin} - {segments[0].destination}
+                  </Typography>
+                  <Typography>
+                    {showDeparturesTimes(
+                      segments[0].date,
+                      segments[0].duration,
+                    )}
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    В ПУТИ
+                  </Typography>
+                  <Typography>
+                    {durationInHoursMinutes(segments[0].duration)}
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    {transitsCount(segments[0].stops)}
+                  </Typography>
+                  <Typography>{segments[0].stops.join(" - ")}</Typography>
+                </Grid>
+              </Grid>
+              <Grid container className={classes.card__info}>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    {segments[1].origin} - {segments[1].destination}
+                  </Typography>
+                  <Typography>
+                    {showDeparturesTimes(
+                      segments[1].date,
+                      segments[1].duration,
+                    )}
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    В ПУТИ
+                  </Typography>
+                  <Typography>
+                    {durationInHoursMinutes(segments[1].duration)}
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
+                    {transitsCount(segments[1].stops)}
+                  </Typography>
+                  <Typography>{segments[1].stops.join(" - ")}</Typography>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+        );
+      })}
     </Stack>
   );
 };

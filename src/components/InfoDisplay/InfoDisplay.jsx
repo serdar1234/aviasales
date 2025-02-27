@@ -1,11 +1,11 @@
 import Grid from "@mui/material/Grid2";
-import Button from "@mui/material/Button";
 import SortFilters from "../SortFilters";
 import classes from "./InfoDisplay.module.scss";
 import Tickets from "../Tickets";
 import ProgressBar from "../ProgressBar";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import ShowMoreButton from "../ShowMoreButton";
 
 const InfoDisplay = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ const InfoDisplay = () => {
   return (
     <>
       <Grid
-        size={{ sm: 7.8 }}
+        size={{ sm: 8 }}
         rowSpacing={2}
         component={"section"}
         className={classes.section}
@@ -26,14 +26,7 @@ const InfoDisplay = () => {
         <SortFilters />
         {isLoading && <ProgressBar />}
         <Tickets />
-        <Button
-          variant="contained"
-          disableElevation
-          fullWidth
-          sx={{ height: "50px" }}
-        >
-          Показать еще 5 билетов!
-        </Button>
+        <ShowMoreButton />
       </Grid>
     </>
   );
