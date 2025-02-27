@@ -5,9 +5,16 @@ import classes from "./InfoDisplay.module.scss";
 import Tickets from "../Tickets";
 import ProgressBar from "../ProgressBar";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 const InfoDisplay = () => {
-  const isLoading = useSelector((state) => !state.tickets.stop);
+  const [isLoading, setIsLoading] = useState(true);
+  const stop = useSelector((state) => state.tickets.stop);
+
+  useEffect(() => {
+    if (stop) setIsLoading(false);
+  }, [stop]);
+
   return (
     <>
       <Grid
