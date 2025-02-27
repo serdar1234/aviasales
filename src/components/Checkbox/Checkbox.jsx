@@ -1,7 +1,7 @@
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { useDispatch, useSelector } from "react-redux";
-import { controlActions } from "../../store/controls";
+import { controlActions } from "../../store/controls-slice";
 
 import classes from "./Checkbox.module.scss";
 

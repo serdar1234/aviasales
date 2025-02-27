@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid2";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+const u6logo =
+  "https://images.daisycon.io/airline/?width=110&height=36&iata=U6";
 
 const Tickets = () => {
   return (
@@ -17,7 +19,7 @@ const Tickets = () => {
               </Typography>
             </Grid>
             <Grid>
-              <img src="/s7_logo.png" alt="S7 Airlines" />
+              <img src={u6logo} alt="S7 Airlines" />
             </Grid>
           </Grid>
           <Grid container className={classes.card__info}>

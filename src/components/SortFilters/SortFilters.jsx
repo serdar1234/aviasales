@@ -2,7 +2,7 @@ import classes from "./SortFilters.module.scss";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { sortActions } from "../../store/sort";
+import { sortActions } from "../../store/sort-slice";
 
 const SortFilters = () => {
   const dispatch = useDispatch();

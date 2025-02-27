@@ -2,7 +2,7 @@ import Grid from "@mui/material/Grid2";
 import Button from "@mui/material/Button";
 import SortFilters from "../SortFilters";
 import classes from "./InfoDisplay.module.scss";
-import Tickets from "../Tickets/Tickets";
+import Tickets from "../Tickets";
 
 const InfoDisplay = () => {
   return (
