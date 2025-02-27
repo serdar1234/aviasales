@@ -3,8 +3,11 @@ import Button from "@mui/material/Button";
 import SortFilters from "../SortFilters";
 import classes from "./InfoDisplay.module.scss";
 import Tickets from "../Tickets";
+import ProgressBar from "../ProgressBar";
+import { useSelector } from "react-redux";
 
 const InfoDisplay = () => {
+  const isLoading = useSelector((state) => !state.tickets.stop);
   return (
     <>
       <Grid
@@ -14,6 +17,7 @@ const InfoDisplay = () => {
         className={classes.section}
       >
         <SortFilters />
+        {isLoading && <ProgressBar />}
         <Tickets />
         <Button
           variant="contained"

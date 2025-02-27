@@ -38,7 +38,7 @@ export const getTickets = (searchId) => {
       } catch (error) {
         console.log(error.message);
       }
-    }, 1000);
+    }, 600);
   };
 };
 
