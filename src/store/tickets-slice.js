@@ -53,6 +53,7 @@ export const getTickets = (searchId) => {
         if (searchId) {
           const res = await fetch(
             `https://aviasales-test-api.kata.academy/tickets?searchId=${searchId}`,
+            { cache: "reload" },
           );
           if (res.ok) {
             let data = await res.json();
@@ -66,6 +67,7 @@ export const getTickets = (searchId) => {
         }
       } catch (error) {
         console.log(error.message);
+        clearInterval(timerID);
       }
     }, 600);
   };
