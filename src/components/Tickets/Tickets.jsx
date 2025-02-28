@@ -40,60 +40,40 @@ const Tickets = () => {
                   />
                 </Grid>
               </Grid>
-              <Grid container className={classes.card__info}>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    {segments[0].origin} - {segments[0].destination}
-                  </Typography>
-                  <Typography>
-                    {showDeparturesTimes(
-                      segments[0].date,
-                      segments[0].duration,
-                    )}
-                  </Typography>
-                </Grid>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    В ПУТИ
-                  </Typography>
-                  <Typography>
-                    {durationInHoursMinutes(segments[0].duration)}
-                  </Typography>
-                </Grid>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    {transitsCount(segments[0].stops)}
-                  </Typography>
-                  <Typography>{segments[0].stops.join(" - ")}</Typography>
-                </Grid>
-              </Grid>
-              <Grid container className={classes.card__info}>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    {segments[1].origin} - {segments[1].destination}
-                  </Typography>
-                  <Typography>
-                    {showDeparturesTimes(
-                      segments[1].date,
-                      segments[1].duration,
-                    )}
-                  </Typography>
-                </Grid>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    В ПУТИ
-                  </Typography>
-                  <Typography>
-                    {durationInHoursMinutes(segments[1].duration)}
-                  </Typography>
-                </Grid>
-                <Grid>
-                  <Typography sx={{ color: "text.secondary", fontSize: 14 }}>
-                    {transitsCount(segments[1].stops)}
-                  </Typography>
-                  <Typography>{segments[1].stops.join(" - ")}</Typography>
-                </Grid>
-              </Grid>
+              {segments.map((line, index) => {
+                return (
+                  <Grid key={index} container className={classes.card__info}>
+                    <Grid>
+                      <Typography
+                        sx={{ color: "text.secondary", fontSize: 14 }}
+                      >
+                        {line.origin} - {line.destination}
+                      </Typography>
+                      <Typography>
+                        {showDeparturesTimes(line.date, line.duration)}
+                      </Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography
+                        sx={{ color: "text.secondary", fontSize: 14 }}
+                      >
+                        В ПУТИ
+                      </Typography>
+                      <Typography>
+                        {durationInHoursMinutes(line.duration)}
+                      </Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography
+                        sx={{ color: "text.secondary", fontSize: 14 }}
+                      >
+                        {transitsCount(line.stops)}
+                      </Typography>
+                      <Typography>{line.stops.join(" - ")}</Typography>
+                    </Grid>
+                  </Grid>
+                );
+              })}
             </CardContent>
           </Card>
         );
