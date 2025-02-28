@@ -13,6 +13,26 @@ const ticketSlice = createSlice({
       state.tickets = [...state.tickets, ...action.payload.tickets];
       state.stop = action.payload.stop;
     },
+    sortCheap: (state) => {
+      state.tickets = state.tickets.toSorted((a, b) => {
+        return a.price - b.price;
+      });
+    },
+    sortFast: (state) => {
+      state.tickets = state.tickets.toSorted((a, b) => {
+        return a.segments[0].duration - b.segments[0].duration;
+      });
+    },
+    sortOptimal: (state) => {
+      state.tickets = state.tickets.toSorted((a, b) => {
+        const priceDifference = a.price - b.price;
+        if (priceDifference === 0) {
+          return a.segments[0].duration - b.segments[0].duration;
+        } else {
+          return priceDifference;
+        }
+      });
+    },
   },
 });
 
@@ -26,7 +46,7 @@ export const getTickets = (searchId) => {
             `https://aviasales-test-api.kata.academy/tickets?searchId=${searchId}`,
           );
           if (res.ok) {
-            const data = await res.json();
+            let data = await res.json();
             dispatch(addTickets(data));
 
             if (data.stop) {

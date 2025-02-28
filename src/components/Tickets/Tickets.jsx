@@ -12,8 +12,9 @@ import {
 } from "../../utils/timeUtils";
 
 const Tickets = () => {
-  const shownTicketCount = useSelector((state) => state.sort.ticketsDisplayed);
+  const shownTicketCount = useSelector((state) => state.sort.shownTicketCount);
   const ticketsArray = useSelector((state) => state.tickets.tickets);
+  console.log("tickets rerendered");
   const visibleTickets = ticketsArray.slice(0, shownTicketCount);
 
   return (

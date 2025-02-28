@@ -3,18 +3,22 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { sortActions } from "../../store/sort-slice";
+import { ticketActions } from "../../store/tickets-slice";
 
 const SortFilters = () => {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.sort.filter);
 
   const sortCheapest = () => {
+    dispatch(ticketActions.sortCheap());
     dispatch(sortActions.cheap());
   };
   const sortFastest = () => {
+    dispatch(ticketActions.sortFast());
     dispatch(sortActions.fast());
   };
   const sortOptimal = () => {
+    dispatch(ticketActions.sortOptimal());
     dispatch(sortActions.optimal());
   };
 

@@ -20,9 +20,9 @@ export const showDeparturesTimes = (timeString, duration) => {
 
 export const durationInHoursMinutes = (duration) => {
   const res = duration % 60;
-  const minutes = res > 10 ? res : "0" + res;
+  const minutes = res > 9 ? res : "0" + res;
   const resHours = (duration - res) / 60;
-  const hours = resHours > 10 ? resHours : "0" + resHours;
+  const hours = resHours > 9 ? resHours : "0" + resHours;
   return hours + "ч " + minutes + "м";
 };
 
