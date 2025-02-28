@@ -14,24 +14,33 @@ const ticketSlice = createSlice({
       state.stop = action.payload.stop;
     },
     sortCheap: (state) => {
-      state.tickets = state.tickets.toSorted((a, b) => {
-        return a.price - b.price;
-      });
+      return {
+        ...state,
+        tickets: state.tickets.toSorted((a, b) => {
+          return a.price - b.price;
+        }),
+      };
     },
     sortFast: (state) => {
-      state.tickets = state.tickets.toSorted((a, b) => {
-        return a.segments[0].duration - b.segments[0].duration;
-      });
+      return {
+        ...state,
+        tickets: state.tickets.toSorted((a, b) => {
+          return a.segments[0].duration - b.segments[0].duration;
+        }),
+      };
     },
     sortOptimal: (state) => {
-      state.tickets = state.tickets.toSorted((a, b) => {
-        const priceDifference = a.price - b.price;
-        if (priceDifference === 0) {
-          return a.segments[0].duration - b.segments[0].duration;
-        } else {
-          return priceDifference;
-        }
-      });
+      return {
+        ...state,
+        tickets: state.tickets.toSorted((a, b) => {
+          const priceDifference = a.price - b.price;
+          if (priceDifference === 0) {
+            return a.segments[0].duration - b.segments[0].duration;
+          } else {
+            return priceDifference;
+          }
+        }),
+      };
     },
   },
 });

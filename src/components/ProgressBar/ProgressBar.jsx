@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 
 export default function ProgressBar() {
   const progress = useSelector((state) => {
-    return state.tickets.tickets.length < 20000
-      ? Math.round(state.tickets.tickets.length / 200)
+    return state.tickets.tickets.length < 10000
+      ? Math.round(state.tickets.tickets.length / 100)
       : 99;
   });
 

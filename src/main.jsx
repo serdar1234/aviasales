@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import "@fontsource-variable/open-sans";
@@ -9,11 +8,9 @@ import aviaSalesTheme from "./utils/theme.js";
 import store from "./store/index.js";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ThemeProvider theme={aviaSalesTheme}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </ThemeProvider>
-  </StrictMode>,
+  <ThemeProvider theme={aviaSalesTheme}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ThemeProvider>,
 );
