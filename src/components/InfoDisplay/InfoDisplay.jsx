@@ -1,11 +1,13 @@
 import Grid from "@mui/material/Grid2";
+
 import SortFilters from "../SortFilters";
 import classes from "./InfoDisplay.module.scss";
 import Tickets from "../Tickets";
 import ProgressBar from "../ProgressBar";
+import ShowMoreButton from "../ShowMoreButton";
+
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import ShowMoreButton from "../ShowMoreButton";
 
 const InfoDisplay = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -33,12 +33,13 @@ const ticketSlice = createSlice({
       return {
         ...state,
         tickets: state.tickets.toSorted((a, b) => {
-          const priceDifference = a.price - b.price;
-          if (priceDifference === 0) {
-            return a.segments[0].duration - b.segments[0].duration;
-          } else {
-            return priceDifference;
-          }
+          // Логика: за каждую лишнюю минуту в полете турист теряет 15р. счастья под солнцем
+          return (
+            a.price +
+            a.segments[0].duration * 15 -
+            b.price -
+            b.segments[0].duration * 15
+          );
         }),
       };
     },

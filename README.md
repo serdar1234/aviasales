@@ -1,1 +1,1 @@
-https://aviasales-two-umber.vercel.app/
+https://aviasales-beta-indol.vercel.app/
