@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateCtrl = { ctrl: [true, true, true, true] };
+const initialStateCtrl = {
+  ctrl: [true, true, true, true],
+  loadingError: false,
+};
 
 const controlSlice = createSlice({
   name: "control",
@@ -8,9 +11,9 @@ const controlSlice = createSlice({
   reducers: {
     all: (state) => {
       if (state.ctrl.includes(false)) {
-        return initialStateCtrl;
+        return { ...state, ctrl: [true, true, true, true] };
       } else {
-        return { ctrl: [false, false, false, false] };
+        return { ...state, ctrl: [false, false, false, false] };
       }
     },
     zero: (state) => {
@@ -24,6 +27,9 @@ const controlSlice = createSlice({
     },
     three: (state) => {
       state.ctrl[3] = !state.ctrl[3];
+    },
+    setError: (state) => {
+      state.loadingError = true;
     },
   },
 });

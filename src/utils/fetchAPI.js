@@ -1,4 +1,5 @@
 import { ticketActions } from "../store/tickets-slice";
+import { controlActions } from "../store/controls-slice";
 
 export function getSearchID(dispatch) {
   fetch("https://aviasales-test-api.kata.academy/search")
@@ -24,8 +25,8 @@ export async function appendTickets(searchId, dispatch, timerID) {
         }
       }
     }
-  } catch (error) {
-    console.log(error.message);
+  } catch {
+    dispatch(controlActions.setError());
     clearInterval(timerID);
   }
 }
