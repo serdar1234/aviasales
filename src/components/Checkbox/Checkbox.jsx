@@ -14,7 +14,7 @@ const VALUES = [
 ];
 
 const CheckboxInput = () => {
-  const controls = useSelector((state) => state.controls.ctrl);
+  const controls = useSelector((state) => state.control.ctrl);
   const dispatch = useDispatch();
   const handleClick = (idx) => {
     switch (idx) {

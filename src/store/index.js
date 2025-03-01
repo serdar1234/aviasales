@@ -7,7 +7,7 @@ import ticketSliceReducer from "./tickets-slice";
 const store = configureStore({
   reducer: {
     sort: sortReducer,
-    controls: controlsReducer,
+    control: controlsReducer,
     tickets: ticketSliceReducer,
   },
 });
