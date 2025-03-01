@@ -1,7 +1,8 @@
 import Grid from "@mui/material/Grid2";
 import classes from "./Header.module.scss";
+import { memo } from "react";
 
-const Header = () => {
+const Header = memo(function Header() {
   return (
     <Grid
       size={12}
@@ -12,6 +13,6 @@ const Header = () => {
       <img alt="Aviasales logo" src="/logo.png" className={classes.logo} />
     </Grid>
   );
-};
+});
 
 export default Header;

@@ -54,7 +54,6 @@ const CheckboxInput = () => {
       />
     );
   });
-
   return inputComponentsArray;
 };
 

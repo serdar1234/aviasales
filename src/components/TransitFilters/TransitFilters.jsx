@@ -1,11 +1,13 @@
 import Grid from "@mui/material/Grid2";
-import classes from "./ControlPanel.module.scss";
+import classes from "./TransitFilters.module.scss";
 import Paper from "@mui/material/Paper";
 import FormGroup from "@mui/material/FormGroup";
-import CheckboxInput from "../Checkbox/Checkbox";
 import Typography from "@mui/material/Typography";
 
-const ControlPanel = () => {
+import CheckboxInput from "../Checkbox";
+import { memo } from "react";
+
+const TransitFilters = memo(function TransitFilters() {
   return (
     <Grid size={{ sm: 3.7 }} component={"aside"}>
       <Paper elevation={3} className={classes.paper}>
@@ -18,6 +20,6 @@ const ControlPanel = () => {
       </Paper>
     </Grid>
   );
-};
+});
 
-export default ControlPanel;
+export default TransitFilters;
