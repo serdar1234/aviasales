@@ -2,13 +2,12 @@ import classes from "./ShowMoreButton.module.scss";
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
 import { sortActions } from "../../store/sort-slice";
+import { bindActionCreators } from "redux";
 
 const ShowMoreButton = () => {
   const dispatch = useDispatch();
 
-  const showMore = () => {
-    dispatch(sortActions.showMore());
-  };
+  const showMore = bindActionCreators(sortActions.showMore, dispatch);
 
   return (
     <Button

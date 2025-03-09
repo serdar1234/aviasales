@@ -3,20 +3,13 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { sortActions } from "../../store/sort-slice";
+import { bindActionCreators } from "redux";
 
 const SortFilters = () => {
   const dispatch = useDispatch();
   const filter = useSelector((state) => state.sort.filter);
 
-  const sortCheapest = () => {
-    dispatch(sortActions.cheap());
-  };
-  const sortFastest = () => {
-    dispatch(sortActions.fast());
-  };
-  const sortOptimal = () => {
-    dispatch(sortActions.optimal());
-  };
+  const { cheap, fast, optimal } = bindActionCreators(sortActions, dispatch);
 
   return (
     <ButtonGroup
@@ -26,22 +19,16 @@ const SortFilters = () => {
       variant="outlined"
       aria-label="Фильтры для сортировки билетов"
     >
-      <Button
-        variant={filter === "cheap" ? "contained" : null}
-        onClick={sortCheapest}
-      >
+      <Button variant={filter === "cheap" ? "contained" : null} onClick={cheap}>
         Самый дешёвый
       </Button>
-      <Button
-        variant={filter === "fast" ? "contained" : null}
-        onClick={sortFastest}
-      >
+      <Button variant={filter === "fast" ? "contained" : null} onClick={fast}>
         Самый быстрый
       </Button>
       <Button
         variant={filter === "optimal" ? "contained" : null}
         style={{ flexGrow: 1 }}
-        onClick={sortOptimal}
+        onClick={optimal}
       >
         Оптимальный
       </Button>
