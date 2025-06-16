@@ -8,9 +8,9 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
 import {
-  durationInHoursMinutes,
+  showDurationInHoursMinutes,
   showDeparturesTimes,
-  transitsCount,
+  showTransitsCount,
 } from "../../utils/timeUtils";
 import filterTicketsByTransits from "../../utils/filterByTransits";
 import { useMemo } from "react";
@@ -82,14 +82,14 @@ const Tickets = () => {
                               В ПУТИ
                             </Typography>
                             <Typography>
-                              {durationInHoursMinutes(line.duration)}
+                              {showDurationInHoursMinutes(line.duration)}
                             </Typography>
                           </Grid>
                           <Grid>
                             <Typography
                               sx={{ color: "text.secondary", fontSize: 14 }}
                             >
-                              {transitsCount(line.stops)}
+                              {showTransitsCount(line.stops)}
                             </Typography>
                             <Typography>{line.stops.join(" - ")}</Typography>
                           </Grid>

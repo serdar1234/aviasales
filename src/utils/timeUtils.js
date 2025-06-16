@@ -18,7 +18,7 @@ export const showDeparturesTimes = (timeString, duration) => {
   return depHours + ":" + depMinutes + " - " + arrHours + ":" + arrMinutes;
 };
 
-export const durationInHoursMinutes = (duration) => {
+export const showDurationInHoursMinutes = (duration) => {
   const res = duration % 60;
   const minutes = res > 9 ? res : "0" + res;
   const resHours = (duration - res) / 60;
@@ -26,7 +26,7 @@ export const durationInHoursMinutes = (duration) => {
   return hours + "ч " + minutes + "м";
 };
 
-export const transitsCount = (arr) => {
+export const showTransitsCount = (arr) => {
   if (!arr.length) {
     return "БЕЗ ПЕРЕСАДОК";
   } else if (arr.length === 1) {
